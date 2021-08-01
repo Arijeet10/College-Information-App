@@ -1,0 +1,14 @@
+{% extends 'homepage.html' %}
+{% block content %}
+{% for c in examsdesc %}
+<div class="card">
+    <div class="card-body">
+        <h1 class='display-1'><center><u>{{c.Name}}</u></center></h1>
+        <h1 class='display-4'>
+            <b>Date of exam is </b>{{c.Date}}<br>
+            {{c.Exam_Description}}<br>
+        </h2>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

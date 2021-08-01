@@ -1,0 +1,24 @@
+{% extends 'homepage.html' %}
+{% block content %}
+<div class="card card-body">
+    <div class="row">
+        <div class="container col" style="background-color:ghostwhite">
+            <center><h2 class='display-4'><u><b>Top Courses</b></u></h2></center>
+            {% for t in topcourse %}
+            <div class="list-group">
+                <a href="{% url 'coursedetailspage' t.pk %}" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h3 class="mb-1">{{t.Name}}</h3>
+                        <small>{{t.Duration}} years</small>
+                    </div>
+                    <p class="mb-1">
+                        This is course description.......
+                    </p>
+                    <small>click to view in details</small>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

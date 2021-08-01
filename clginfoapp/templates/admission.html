@@ -1,0 +1,26 @@
+{% extends 'homepage.html' %}
+{% block content %}
+<div class="card card-body">
+    <div class="row">
+        <div class="container col-sm-10 offset-1" style="background-color:ghostwhite">
+            <table class="table table-bordered table-hover table-responsive" style="white-space: nowrap;">
+                <thead class="bg-dark text-light">
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Admission</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    {% for a in admi %}
+                    <tr class='clickable-row' data-href="#">
+                        <td>{{a.Name}}</td>
+                        <td>{{a.admi_link}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

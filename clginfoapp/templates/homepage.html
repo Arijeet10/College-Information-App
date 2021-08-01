@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no">
+    <title>College Information</title>
+
+    <!--    BootStrap CDN Links     -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script
+    src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+    <!--    BootStrap CDN Links End     -->
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <!--    Main Navbar    -->
+    <nav class="navbar navbar-light bg-light navbar-expand-lg">
+        <a class="navbar-brand text-primary" href="{% url 'homepage' %}"><b>College Information</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto nav-flex-icons">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Menu
+                    </a>
+                    <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{% url 'homepage' %}">Home</a>
+                        <a class="dropdown-item" href="{% url 'clglistpage' %}">Colleges</a>
+                        <a class="dropdown-item" href="{% url 'topcoursepage' %}">Courses</a>
+                        <a class="dropdown-item" href="{% url 'topexamspage' %}">Exams</a>
+                        <a class="dropdown-item" href="{% url 'chatbot' %}">Chatbot</a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto nav-flex-icons">
+                {% if user.is_authenticated %}
+                <li class="nav-item text-primary">
+                    <b>Hello, {{user.username}}</b>
+                </li>  
+                <a class="nav-link text-danger mx-2" href="{% url 'logout' %}">
+                    <button class="btn btn-danger" type="submit">Log Out</button>
+                </a>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link text-primary mx-2" href="{% url 'register' %}">SignUp</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-primary mx-2" href="{% url 'login' %}">Login</a>
+                </li>  
+                {% endif %}              
+            </ul>
+        </div>
+    </nav>
+    <!--Navbar End-->
+    <!--   Main Content     -->
+    <div class="card">
+        <div class="card-body">
+            <center>
+                <div class="btn-group btn-group-toggle">
+                    <a class="btn-lg btn-warning" href="{% url 'topclgpage' %}">Top Colleges</a>
+                    <a class="btn-lg btn-warning" href="{% url 'topcoursepage' %}">Top Courses</a>
+                    <a class="btn-lg btn-warning" href="{% url 'topexamspage' %}">Explore Exams</a>
+                    <a class="btn-lg btn-warning" href="{% url 'admission' %}">Admissions</a>
+                    <a class="btn-lg btn-warning" href="{% url 'chatbot' %}">Chatbot</a>
+                </div>
+            </center>
+        </div>
+    </div>
+
+    <!--block content pages-->
+    {% block content %}{% endblock %}
+    <!--end-->
+    <hr>
+    <!--About the Website-->
+    <div class="container">
+        <h1 class="display-4">About Us:</h1>
+        <h5>Admissions to college can be very competitive. This website helps to choose the right college as per your need.</h5>
+        <hr>
+        <h2 class="display-4">What does this website do?</h2>
+        <h5>
+            <ul>
+                <li>search for colleges according to your interest</li>
+                <li>browse through courses of the colleges</li>
+                <li>a complete details on the colleges</li>
+                <li>know the full admission process</li>
+            </ul>
+        </h5>
+        <hr>
+    </div>
+    <!--    End    -->
+</body>
+</html>

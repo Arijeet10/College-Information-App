@@ -1,0 +1,26 @@
+{% extends 'homepage.html' %}
+{% block content %}
+<div class="card card-body">
+    <div class="row">
+        <div class="container col-10" style="background-color:ghostwhite">
+            <center><h2 class='display-4'><b>Top Colleges</b></h2></center>
+            {% for t in topclgs %}
+            <div class="list-group">
+                <a href="{% url 'clgdetailspage' t.pk %}" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h3 class="mb-1">{{t.Name}}</h3>
+                        <small>Rating:{{t.Ratings}}/5</small>
+                    </div>
+                    <p class="mb-1">
+                        {{t.Address}}.<br>
+                        Email - {{t.Email}}<br>
+                        Contact - {{t.Contact_no}}
+                    </p>
+                    <small>click to view in details</small>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
