@@ -6,3 +6,7 @@ User Sign Up Page
 
 User Log in Page
 
+![login](https://user-images.githubusercontent.com/87312638/127765803-d0c678f2-e5a2-49d5-a9f1-f96acb90c470.png)
+
+Homepage
+
