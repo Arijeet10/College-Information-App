@@ -10,3 +10,12 @@ User Log in Page
 
 Homepage
 
+<img width="889" alt="homepage" src="https://user-images.githubusercontent.com/87312638/127765845-a41b9775-cea5-4671-9a22-56c41ee98bb9.png">
+
+List of colleges page
+
+![collegeList](https://user-images.githubusercontent.com/87312638/127765859-1971e94c-4075-42a3-b000-0c653a5938ff.png)
+
+College Details page
+
+![collegeDetails](https://user-images.githubusercontent.com/87312638/127765878-62ef2253-5e4f-4ae9-94dd-24edfaffd5ee.png)
